@@ -10,7 +10,8 @@ Table of Content
 ## Installation
 
 ### Assumption:
-
+- [Java SE11 is installed](https://openjdk.java.net/projects/jdk/11/)
+- [Maven is installed](https://maven.apache.org/install.html)
 
 
 
@@ -30,3 +31,10 @@ JAR file can be create by executing the following command:
 ```
 mvn package
 ```
+
+##Report
+Logs can be found in the log folder generated in the project directory.                  
+Report can be found in the reports folder generated in the project directory.              
+
+- **completeReport** - It will include all test cases results
+- **failReport** - It will provide only failed cases report

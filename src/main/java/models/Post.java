@@ -2,6 +2,10 @@ package models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
+/**
+ * Class Mapper for Post API
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Post {
 

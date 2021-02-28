@@ -14,3 +14,4 @@ buildNumber.properties
 .settings/
 test-output/
 logs/
+Reports/

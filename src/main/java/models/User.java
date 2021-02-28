@@ -2,6 +2,9 @@ package models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * Class Mapper for User API
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 

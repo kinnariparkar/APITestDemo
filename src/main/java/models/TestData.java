@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+/**
+ * Class for username in test-data xml
+ */
 public class TestData {
 	public List<String> usernameList = new ArrayList<String>();
 

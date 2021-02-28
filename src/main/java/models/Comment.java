@@ -2,13 +2,16 @@ package models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+/**
+ * Class Mapper for Comment API
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Comment {
 	public Integer postId;
 	public Integer id;
 	public String name;
 	public String email;
-	
+
 	public Integer getPostId() {
 		return postId;
 	}
@@ -45,6 +48,5 @@ public class Comment {
 	public String toString() {
 		return "Comment [postId=" + postId + ", id=" + id + ", email=" + email + "]";
 	}
-	
 
 }
