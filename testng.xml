@@ -5,6 +5,8 @@
 	<test thread-count="5" name="UnitTest">
 		<classes>
 			<class name="unit.Test_Users" />
+			<class name="unit.Test_Posts" />
+			<class name="unit.Test_Comments" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

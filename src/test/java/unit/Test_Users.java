@@ -3,28 +3,44 @@ package unit;
 import static io.restassured.RestAssured.given;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
+import base.TestSetup;
 
-public class Test_Users {
+public class Test_Users extends TestSetup {
 
-	// This method will provide data to any test method that declares that its Data
-	// Provider
-	// is named "test1"
+	/**
+	 * DataProvider to provide test-data for fetching users with specific username
+	 * 
+	 * @return Object of username strings
+	 */
 	@DataProvider(name = "userdata")
 	public Object[] createUserData() {
 		return new Object[] { "Delphine", "Bret" };
 	}
 
+	/**
+	 * This method is a unit test case for the user API - GET method
+	 * 
+	 * @param username
+	 */
 	@Test(description = "Test to get user details from users api", dataProvider = "userdata")
-	public void get_user(String username) {
-		RestAssured.baseURI = "https://jsonplaceholder.typicode.com/";
-		Response response = given().queryParam("username", username).when().get("/users");
-
+	public void getUser(String username) {
+		response = 
+				given().
+					queryParam("username", username).
+				when().
+					get("/users").
+				then().
+					extract().response();
 		Assert.assertEquals(response.getStatusCode(), 200);
 		// TODO - Other Assertions for schema validations and response body
+	}
+
+	@AfterClass
+	void tearDown() {
+		logger.info("*********  Finished  " + Test_Users.class + " **********");
 	}
 }
